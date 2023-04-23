@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/*カラー*/
+/*アニメーション*/
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes down {
+  0% {
+    position: relative;
+    top: -7rem;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
+}
+@keyframes up {
+  0% {
+    position: relative;
+    bottom: -7rem;
+  }
+  100% {
+    position: relative;
+    bottom: 0;
+  }
+}
+/*base*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f3f8f8;
+  animation: opacity 1s;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+a:hover {
+  color: #4f66da;
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+/*header*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  animation: down 1s;
+}
+@media screen and (max-width: 760px) {
+  .header {
+    display: initial;
+    justify-content: start;
+  }
+}
+.header .header-logo {
+  height: 7rem;
+  line-height: 7rem;
+  margin-left: 4rem;
+}
+@media screen and (max-width: 760px) {
+  .header .header-logo {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+.header .header-nav ul {
+  display: flex;
+  margin-right: 4rem;
+  height: 7rem;
+  line-height: 7rem;
+}
+@media screen and (max-width: 760px) {
+  .header .header-nav ul {
+    margin-right: 0;
+    background-color: #69c2c2;
+    height: 5rem;
+    line-height: 5rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .header .header-nav ul {
+    flex-wrap: wrap;
+    height: 10rem;
+  }
+}
+.header .header-nav ul li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media screen and (max-width: 760px) {
+  .header .header-nav ul li {
+    width: 25%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 560px) {
+  .header .header-nav ul li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .header .header-nav ul li a {
+    color: #fff;
+  }
+}
+
+/*main*/
+.main {
+  width: 55%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /*個別ページ 固定ページ*/
+}
+@media screen and (max-width: 960px) {
+  .main {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .main {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.main .articles {
+  width: 100%;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 760px) {
+  .main .articles {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.main .articles .article {
+  border: 0.5rem solid #fff;
+  background-color: #fff;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: 0.5s border;
+  position: relative;
+}
+.main .articles .article:hover {
+  border: 0.5rem solid #5784ad;
+}
+.main .articles .article .article-info h3 {
+  text-align: right;
+  font-size: 1.5rem;
+}
+.main .articles .article .article-info h3 a {
+  position: relative;
+  z-index: 1;
+}
+.main .articles .article .article-info h3 a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 480px) {
+  .main .articles .article .article-info h2,
+  .main .articles .article .article-info h3 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .main .articles .article .article-info p {
+    display: none;
+  }
+}
+.main .articles .article .article-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.main .single-page {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background-color: #fff;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 1050px) {
+  .main .single-page {
+    width: 98%;
+  }
+}
+.main .single-page img {
+  max-width: 100%;
+  height: auto;
+}
+.main .single-page .blog-title h1 {
+  border-bottom: 0.2rem solid #333;
+  margin-bottom: 1rem;
+}
+.main .single-page .blog-time {
+  text-align: right;
+}
+.main .single-page h2,
+.main .single-page h3,
+.main .single-page a,
+.main .single-page p,
+.main .single-page img,
+.main .single-page .iframe-wrapper {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.main .single-page h2,
+.main .single-page h3 {
+  font-size: 2.4rem;
+  background-color: #7287f0;
+  color: #fff;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  border-radius: 0.5rem;
+}
+.main .single-page a {
+  display: inline-block;
+  color: #4f66da;
+}
+.main .single-page .iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.main .single-page .iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 560px) {
+  .main .single-page .mw_wp_form form input,
+  .main .single-page .mw_wp_form form textarea {
+    width: 100%;
+  }
+}
+.main .single-page .mw_wp_form form button {
+  padding: 1rem;
+  outline: none;
+  background-color: #333;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+}
+.main .single-page .mw_wp_form_send_error {
+  font-weight: bold;
+}
+.main .pagination {
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.main .pagination span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1.5rem;
+}
+.main .error {
+  font-weight: bold;
+  margin: 2rem;
+}
+
+/*footer*/
+.footer {
+  background-color: #69c2c2;
+  height: 7rem;
+  line-height: 7rem;
+  text-align: center;
+  animation: up 1s;
+}
+.footer .footer-logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+@media screen and (max-width: 560px) {
+  .footer .footer-logo {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
